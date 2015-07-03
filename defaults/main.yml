@@ -1,0 +1,5 @@
+---
+mail_target: "mail@example.com"
+reboot_time: "04:00"
+do_reboot: "true"
+do_autoremove: "false"

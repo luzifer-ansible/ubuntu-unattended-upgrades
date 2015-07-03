@@ -1,0 +1,41 @@
+---
+
+- name: Install required packages for autoupdate
+  apt: name={{ item }} update_cache=yes
+  with_items:
+    - unattended-upgrades
+    - update-notifier-common
+    - sendmail
+
+- name: Add configuration file
+  copy: dest=/etc/apt/apt.conf.d/20auto-upgrades src=20auto-upgrades
+
+- name: Configure mail target for Unattended Upgrade
+  lineinfile: line="Unattended-Upgrade::Mail \"{{mail_target}}\";"
+  args:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '^(//)?Unattended-Upgrade::Mail '
+
+- name: Set auto-reboot-time for Unattended Upgrade
+  lineinfile: line="Unattended-Upgrade::Automatic-Reboot-Time \"{{reboot_time}}\";"
+  args:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '^(//)?Unattended-Upgrade::Automatic-Reboot-Time '
+
+- name: Set auto-reboot for Unattended Upgrade
+  lineinfile: line="Unattended-Upgrade::Automatic-Reboot \"{{do_reboot}}\";"
+  args:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '^(//)?Unattended-Upgrade::Automatic-Reboot '
+
+- name: Set autoremove for Unattended Upgrade
+  lineinfile: line="Unattended-Upgrade::Remove-Unused-Dependencies \"{{do_autoremove}}\";"
+  args:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '^(//)?Unattended-Upgrade::Remove-Unused-Dependencies '
+
+- name: Enable normal updates
+  lineinfile: line='    "${distro_id}:${distro_codename}-updates";'
+  args:
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    regexp: '\$\{distro_id\}:\$\{distro_codename\}-updates'
