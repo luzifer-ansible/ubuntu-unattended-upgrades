@@ -1,36 +1,13 @@
-ubuntu-unattended
-=========
+# luzifer-ansible / ubuntu-unattended-upgrades
 
-Enable unattended upgrades on Ubuntu machines
+This role installs required packages for unattended upgrades and configures them.
 
-Role Variables
---------------
+## Requirements
 
-```yaml
----
-mail_target:    "mail@example.com"  # The email address to send reports to
-reboot_time:    "04:00"             # When to reboot the server after updates
-do_reboot:      "true"              # Execute an automated reboot?
-do_autoremove:  "false"             # Execute 'apt-get autoremove'?
-```
+- Ubuntu >= 16.04 (xenial)
 
-You should ensure `do_reboot` and `do_autoremove` are strings as they are written into the apt configuration and that file expects `true` instead of `True`, which will get written if you pass a bool here.
+## Usage
 
-Example Playbook
-----------------
+See the [Ansible Galaxy Intro](https://galaxy.ansible.com/intro) for usage of roles within Ansible Galaxy.
 
-```yaml
----
-- hosts: servers
-  roles:
-    - role: ubuntu-unattended
-      mail_target: mymail@provider.com
-      reboot_time: 04:00
-      do_reboot: "true"
-      do_autoremove: "false"
-```
-
-License
--------
-
-Apache 2.0
+For configuration variables and how to use them see [defaults/main.yml](defaults/main.yml).
