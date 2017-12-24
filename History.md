@@ -1,3 +1,7 @@
+# 1.0.1 / 2017-12-25
+
+  * Fix: Quote required characters
+
 # 1.0.0 / 2017-12-24
 
   * Rewrite role to add more configuration options
