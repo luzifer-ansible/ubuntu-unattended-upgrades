@@ -14,4 +14,7 @@ unattended_mail: "mail@example.com"
 unattended_mail_only_on_error: false
 unattended_minimal_steps: false
 unattended_reboot_time: "now"
+unattended_reboot_with_users: true
 unattended_remove_unused_dependencies: false
+unattended_syslog_enable: false
+unattended_syslog_facility: "daemon"

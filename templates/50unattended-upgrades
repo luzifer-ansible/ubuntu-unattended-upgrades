@@ -47,7 +47,16 @@ Unattended-Upgrade::Remove-Unused-Dependencies "{{ unattended_remove_unused_depe
 //  if the file /var/run/reboot-required is found after the upgrade
 Unattended-Upgrade::Automatic-Reboot "{{ unattended_automatic_reboot | to_json }}";
 
+// Automatically reboot even if there are users currently logged in.
+Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ unattended_reboot_with_users | to_json }}";
+
 // If automatic reboot is enabled and needed, reboot at the specific
 // time instead of immediately
 //  Default: "now"
 Unattended-Upgrade::Automatic-Reboot-Time "{{ unattended_reboot_time }}";
+
+// Enable logging to syslog. Default is False
+Unattended-Upgrade::SyslogEnable "{{ unattended_syslog_enable | to_json }}";
+
+// Specify syslog facility. Default is daemon
+Unattended-Upgrade::SyslogFacility "{{ unattended_syslog_facility }}";
