@@ -1,3 +1,7 @@
+# 1.1.0 / 2018-01-22
+
+  * Implement new options from upstream package
+
 # 1.0.1 / 2017-12-25
 
   * Fix: Quote required characters
