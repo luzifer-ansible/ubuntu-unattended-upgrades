@@ -1,3 +1,7 @@
+# 1.2.0 / 2018-03-19
+
+  * Use `cache_valid_time` for apt module
+
 # 1.1.0 / 2018-01-22
 
   * Implement new options from upstream package
