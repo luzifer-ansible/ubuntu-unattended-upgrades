@@ -5,16 +5,4 @@ unattended_allowed_origins:
 - '"${distro_id}:${distro_codename}-security";'
 - '"${distro_id}:${distro_codename}-updates";'
 
-unattended_package_blacklist: []
-
-unattended_auto_fix_interrupted_dpkg: true
-unattended_automatic_reboot: false
-unattended_install_on_shutdown: false
-unattended_mail: "mail@example.com"
-unattended_mail_only_on_error: false
-unattended_minimal_steps: false
-unattended_reboot_time: "now"
-unattended_reboot_with_users: true
-unattended_remove_unused_dependencies: false
-unattended_syslog_enable: false
-unattended_syslog_facility: "daemon"
+...
