@@ -1,3 +1,7 @@
+# 1.3.0 / 2018-10-18
+
+  * Adjust config to match bionic branch
+
 # 1.2.0 / 2018-03-19
 
   * Use `cache_valid_time` for apt module
