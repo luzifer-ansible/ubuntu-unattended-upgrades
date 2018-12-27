@@ -2,12 +2,11 @@
 
 - name: Install required packages for autoupdate
   apt:
-    name: '{{ item }}'
+    name:
+      - unattended-upgrades
+      - update-notifier-common
+      - sendmail
     cache_valid_time: 86400
-  with_items:
-    - unattended-upgrades
-    - update-notifier-common
-    - sendmail
 
 - name: Enable automatic update / upgrade
   copy:
