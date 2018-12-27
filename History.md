@@ -1,3 +1,7 @@
+# 1.3.1 / 2018-12-27
+
+  * Fix deprecation warning (Ansible 2.7)
+
 # 1.3.0 / 2018-10-18
 
   * Adjust config to match bionic branch
