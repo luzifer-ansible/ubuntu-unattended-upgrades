@@ -4,7 +4,6 @@
   apt:
     name:
       - unattended-upgrades
-      - update-notifier-common
       - sendmail
     cache_valid_time: 86400
 
