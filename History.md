@@ -1,3 +1,7 @@
+# 1.4.0 / 2020-01-12
+
+  * Remove no longer present dependency
+
 # 1.3.1 / 2018-12-27
 
   * Fix deprecation warning (Ansible 2.7)
